@@ -6,8 +6,11 @@ arch=('x86_64')
 url="https://gitlab.com/edu4rdshl/upcheck"
 license=('GPL3')
 depends=('pacman-contrib')
-source=("https://gitlab.com/edu4rdshl/${pkgname}/-/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('299F590D967CD98A1E658D6CD4226B1D37B9A5DFF8CABBB5D00BC09072D61C28')
+source=("https://gitlab.com/edu4rdshl/${pkgname}/-/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz"
+        "$pkgname.install")
+sha256sums=('299F590D967CD98A1E658D6CD4226B1D37B9A5DFF8CABBB5D00BC09072D61C28'
+            'SKIP')
+install="$pkgname.install"
 
 package() {
   cd $pkgname-$pkgver
