@@ -1,13 +1,13 @@
 # upcheck
 
-Checker for ArchLinux available updates and send it via libnotify writen in Rust.
+Checker for ArchLinux available updates and send it via notify-rust.
 
 # How to install and get it working?
 
-First install [pacman-contrib](https://www.archlinux.org/packages/community/x86_64/pacman-contrib/) and [libnotify](https://www.archlinux.org/packages/extra/x86_64/libnotify/) from ArchLinux repos:
+First install [pacman-contrib](https://www.archlinux.org/packages/community/x86_64/pacman-contrib/) from ArchLinux repos:
 
 ```
-# pacman -Syu --needed pacman-contrib libnotify
+# pacman -Syu --needed pacman-contrib
 ```
 
 Installation is easy, put the `bin/upcheck` binary in $HOME/.local/bin/, then put the `upcheck.service` and `upcheck.timer` into $HOME/.config/systemd/user/. **Edit** the `upcheck.service` file in the *ExecStart=* section pointing to the `upcheck` executable path and finally enable/start `upcheck.timer` with the command `systemctl --user enable upcheck.timer && systemctl --user start upcheck.timer`
@@ -18,6 +18,7 @@ Installation is easy, put the `bin/upcheck` binary in $HOME/.local/bin/, then pu
 
 If you don't want to use the provided binary, you can compile it following the next commands:
 ```
+# pacman -S rust
 $ git clone https://gitlab.com/edu4rdshl/upcheck.git
 $ cd upcheck
 $ cargo build --release
@@ -27,7 +28,7 @@ Then continue with "How to install and get it working" skipping the binary secti
 
 # How it works?
 
-It use the `checkupdates` bash script provided by the `pacman-contrib` package and the `notify-send` binary provided by the `libnotify` package. First, it exec the command `checkupdates` and save the output in a variable, if the variable is not an empty string, mean that there are available updates and then send the variable content using `libnotify`.
+It use the `checkupdates` bash script provided by the `pacman-contrib` package. First, it exec the command `checkupdates` and save the output in a variable, if the variable is not an empty string, mean that there are available updates and then send the variable content using the  [notify-rust](https://crates.io/crates/notify-rust) crate.
 
 # What is the purpose?
 
