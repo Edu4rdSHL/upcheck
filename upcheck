@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if ! command -v checkupdates > /dev/null || ! command -v notify-send > /dev/null ; then
+  echo "Error: You need to install the pacman-contrib and libnotify packages."
+  exit
+fi
+
+available_updates="$(checkupdates)"
+
+if [[ -n $available_updates ]]; then
+  notify-send "The following updates are available:" --icon=dialog-information
+  notify-send "$available_updates"
+fi

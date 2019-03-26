@@ -1,0 +1,10 @@
+[Unit]
+ Description=Check for ArchLinux available updates every 1.5 hours.
+
+[Timer]
+ OnBootSec=10min
+ OnUnitActiveSec=1h 30min
+ Unit=upcheck.service
+
+[Install]
+ WantedBy=timers.target
