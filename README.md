@@ -22,7 +22,7 @@ It use the `checkupdates` bash script provided by the `pacman-contrib` package a
 
 It doesn't have any special purpose, it was created only trying to avoid the user manual interaction of checking available updates everytime and show it when are available.
 
-# How can I checge the execution frequency time?
+# How can I change the execution frequency time?
 
 Modify the `upcheck.timer` unit and change the OnUnitActiveSec= option to what you want. See `man 7 systemd.time` for the time specifications.
 
