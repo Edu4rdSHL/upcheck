@@ -10,13 +10,13 @@ First install [pacman-contrib](https://www.archlinux.org/packages/community/x86_
 # pacman -Syu --needed pacman-contrib libnotify
 ```
 
-Installation is easy, put the `bin/upcheck` binary in $HOME/.local/bin/, then put the `upcheck.service` and `upcheck.timer` into $HOME/.config/systemd/user/ and enable/start `upcheck.timer` with the command `systemctl --user enable upcheck.timer && systemctl --user start upcheck.timer`
+Installation is easy, put the `bin/upcheck` binary in $HOME/.local/bin/, then put the `upcheck.service` and `upcheck.timer` into $HOME/.config/systemd/user/. **Edit** the `upcheck.service` file in the *ExecStart=* section pointing to the `upcheck` executable path and finally enable/start `upcheck.timer` with the command `systemctl --user enable upcheck.timer && systemctl --user start upcheck.timer`
 
 **Important note**: you need a [notifications server](https://wiki.archlinux.org/index.php/Desktop_notifications#Notification_servers) if you aren't using Cinnamon, Deepin, Enlightenment, GNOME, GNOME Flashback or KDE Plasma.
 
 # Building yourself
 
-If you don't want to use the provide binary, you can compile it following the next commands:
+If you don't want to use the provided binary, you can compile it following the next commands:
 ```
 $ git clone https://gitlab.com/edu4rdshl/upcheck.git
 $ cd upcheck
