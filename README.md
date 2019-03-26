@@ -17,13 +17,13 @@ Installation is easy, put the `bin/upcheck` binary in $HOME/.local/bin/, then pu
 # Building yourself
 
 If you don't want to use the provide binary, you can compile it following the next commands:
-``
+```
 $ git clone https://gitlab.com/edu4rdshl/upcheck.git
 $ cd upcheck
 $ cargo build --release
 $ cp target/release/upcheck $HOME/.local/bin/
-``
-Then continue with installation.
+```
+Then continue with "How to install and get it working" skipping the binary section.
 
 # How it works?
 
