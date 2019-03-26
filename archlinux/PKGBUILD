@@ -8,7 +8,7 @@ license=('GPL3')
 depends=('pacman-contrib')
 source=("https://gitlab.com/edu4rdshl/${pkgname}/-/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz"
         "$pkgname.install")
-sha256sums=('299F590D967CD98A1E658D6CD4226B1D37B9A5DFF8CABBB5D00BC09072D61C28'
+sha512sums=('bd635219068dc34294f38b2c84d6dc2aa45fc0e9516c95f9ea1970a9f3968810fa27e90c07bf9545f0ef7d5451da3078cd70ad5eb7f661e9d8d7163f546f25cf'
             'SKIP')
 install="$pkgname.install"
 
