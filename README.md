@@ -4,19 +4,19 @@ Checker for ArchLinux available updates and send it via notify-rust.
 
 # How to install and get it working?
 
+**Using AUR package:**
+
+Install the [upcheck](https://aur.archlinux.org/packages/upcheck/) package and enable/start the `upcheck.timer` user unit with `systemctl --user enable upcheck.timer && systemctl --user start upcheck.timer`
+
+**Manually:**
+
 First install [pacman-contrib](https://www.archlinux.org/packages/community/x86_64/pacman-contrib/) from ArchLinux repos:
 
 ```
 # pacman -Syu --needed pacman-contrib
 ```
 
-**Using AUR package:**
-
-Install the [upcheck](https://aur.archlinux.org/packages/upcheck/) package.
-
-**Manually for user only:**
-
-Installation is easy, put the `bin/upcheck` binary in $HOME/.local/bin/, then put the `upcheck.service` and `upcheck.timer` into $HOME/.config/systemd/user/. **Edit** the `upcheck.service` file in the *ExecStart=* section pointing to the `upcheck` executable path and finally enable/start `upcheck.timer` with the command `systemctl --user enable upcheck.timer && systemctl --user start upcheck.timer`
+Installation is easy, put the `bin/upcheck` binary in the /usr/bin/ system directory, then put the `upcheck.service` and `upcheck.timer` into $HOME/.config/systemd/user/ and finally enable/start the `upcheck.timer` unit with the command `systemctl --user enable upcheck.timer && systemctl --user start upcheck.timer`
 
 **Important note**: you need a [notifications server](https://wiki.archlinux.org/index.php/Desktop_notifications#Notification_servers) if you aren't using Cinnamon, Deepin, Enlightenment, GNOME, GNOME Flashback or KDE Plasma.
 
@@ -44,4 +44,15 @@ It doesn't have any special purpose, it was created only trying to avoid the use
 
 Modify the `upcheck.timer` unit and change the OnUnitActiveSec= option to what you want. See `man 7 systemd.time` for the time specifications.
 
-That is all.
+# Screenshots
+
+Here's a couple of screenshots of upcheck in action:
+
+Updates available:
+
+![](Images/2019-03-27-145536-sechacklabs.png)
+
+
+No updates available:
+
+![](Images/2019-03-27-150913-sechacklabs.png)
