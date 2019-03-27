@@ -1,0 +1,8 @@
+[package]
+name = "upcheck"
+version = "0.1.0"
+authors = ["Eduard Toloza <tolosaeduard@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+notify-rust = "^3"
