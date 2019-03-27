@@ -188,7 +188,7 @@ dependencies = [
 
 [[package]]
 name = "upcheck"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "notify-rust 3.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
