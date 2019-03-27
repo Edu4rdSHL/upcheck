@@ -1,6 +1,6 @@
 # upcheck
 
-Checker and notifier for ArchLinux available updates writen in Rust that's totally Desktop/WM environment dependient.
+Checker and notifier for ArchLinux available updates writen in Rust that's totally Desktop/WM environment independent.
 
 # How to install and get it working?
 
