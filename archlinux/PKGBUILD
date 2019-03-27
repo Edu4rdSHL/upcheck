@@ -1,5 +1,7 @@
+# Maintainer: Eduard Toloza edu4rdshl@securityhacklabs.net
+
 pkgname=upcheck
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc='Checker for ArchLinux available updates and send it via notify-rust.'
 arch=('x86_64')
@@ -14,9 +16,9 @@ install="$pkgname.install"
 
 package() {
   cd $pkgname-$pkgver
-  install -dm 755 "$pkgdir/etc/systemd/system/"
+  install -dm 755 "$pkgdir/usr/lib/systemd/user/"
 
   install -Dm 755 bin/$pkgname "$pkgdir/usr/bin/$pkgname"
   install -Dm 755 README.md "$pkgdir/usr/share/doc/$pkgname/README"
-  cp $pkgname.{service,timer} "$pkgdir/etc/systemd/system/"
+  cp $pkgname.{service,timer} "$pkgdir/usr/lib/systemd/user/"
 }
