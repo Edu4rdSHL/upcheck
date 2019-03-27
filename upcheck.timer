@@ -1,5 +1,5 @@
 [Unit]
- Description=Check for ArchLinux available updates every 1.5 hours.
+ Description=Check for ArchLinux available updates according to OnUnitActiveSec= time, default 1h 30min.
 
 [Timer]
  OnBootSec=10min

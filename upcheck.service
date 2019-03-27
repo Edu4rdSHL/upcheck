@@ -1,12 +1,13 @@
 [Unit]
- Description=Automatically check updates and send notifications via libnotify
+ Description=Automatically check updates and send notifications via notify-rust
  After=network-online.target
+ ConditionUser=!root
 
 [Service]
- Type=simple
+ Type=oneshot
  ExecStart=/usr/bin/upcheck
  KillMode=process
  KillSignal=SIGINT
 
 [Install]
- WantedBy=multi-user.target
+ WantedBy=default.target
