@@ -9,6 +9,15 @@ fn main() {
     upcheck();
 }
 
+fn send_notification(summary: &str, data: &str, icon: &str) {
+    Notification::new()
+        .summary(&summary)
+        .body(&data)
+        .icon(&icon)
+        .show()
+        .unwrap();
+}
+
 fn upcheck() {
     // Declare variables
     let checkupdates = "/usr/bin/checkupdates";
@@ -52,13 +61,4 @@ fn upcheck() {
             &checkupdates
         );
     }
-}
-
-fn send_notification(summary: &str, data: &str, icon: &str) {
-    Notification::new()
-        .summary(&summary)
-        .body(&data)
-        .icon(&icon)
-        .show()
-        .unwrap();
 }
