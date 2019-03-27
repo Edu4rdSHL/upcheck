@@ -49,10 +49,10 @@ fn upcheck() {
                 );
             }
         } else {
-            eprintln!("Process exited with: {}", available_updates.status);
+            eprintln!("Process exited with: {}", &available_updates.status);
             eprintln!(
                 "\nMore information about the error:\n\n {:#?}",
-                available_updates
+                &available_updates
             );
         }
     } else {
