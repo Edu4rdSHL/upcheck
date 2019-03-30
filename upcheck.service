@@ -5,7 +5,7 @@
 
 [Service]
  Type=oneshot
- ExecStart=/usr/bin/upcheck
+ ExecStart=/usr/bin/upcheck 90
  KillMode=process
  KillSignal=SIGINT
 

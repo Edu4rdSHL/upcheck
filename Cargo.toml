@@ -1,8 +1,9 @@
 [package]
 name = "upcheck"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Eduard Toloza <tolosaeduard@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-notify-rust = "^3"
+notify-rust = "3.5.0"
+schedule_recv = "0.1.0"

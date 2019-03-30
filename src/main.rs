@@ -1,12 +1,45 @@
 // Crate for notifications
 extern crate notify_rust;
+extern crate schedule_recv;
 
 use notify_rust::Notification;
+use std::env;
 use std::path::Path;
 use std::process::Command;
 
 fn main() {
-    upcheck();
+    let args: Vec<String> = env::args().collect();
+    if args.len() == 2 {
+        let execution_time: u32 = args[1]
+            .trim()
+            .parse()
+            .expect("Error, execution time argument can not be converted in a valid number.");
+
+        println!(
+            "You are going to check updates every {} minute(s).",
+            execution_time
+        );
+
+        // Execution time need to be miliseconds
+        let execution_time = execution_time * 60000;
+        let tick = schedule_recv::periodic_ms(execution_time);
+        loop {
+            tick.recv().unwrap();
+            upcheck();
+        }
+    } else {
+        println!(
+            "
+    Usage:
+
+    upcheck <time in minutes>
+    Example:
+
+    upcheck 60
+    - Check for updates every 60 minutes.
+                 "
+        );
+    }
 }
 
 fn send_notification(summary: &str, data: &str, icon: &str) {
