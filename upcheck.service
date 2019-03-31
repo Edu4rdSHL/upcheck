@@ -4,7 +4,7 @@
  ConditionUser=!root
 
 [Service]
- Type=oneshot
+ Type=simple
  ExecStart=/usr/bin/upcheck 90
  KillMode=process
  KillSignal=SIGINT
