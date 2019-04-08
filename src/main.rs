@@ -68,15 +68,15 @@ fn upcheck() {
             let available_updates = String::from_utf8(available_updates.stdout)
                 .expect("Output of checkupdates could not be parsed as valid UTF-8.");
             // Send the notification if updates are or not available
-            if &available_updates.len() > &0 {
+            if available_updates.is_empty() {
                 send_notification(
-                    "The following updates are available:",
+                    "No updates are available.",
                     &available_updates,
                     "dialog-information",
                 );
             } else {
                 send_notification(
-                    "No updates are available.",
+                    "The following updates are available:",
                     &available_updates,
                     "dialog-information",
                 );
