@@ -33,7 +33,7 @@ Installation is easy, put the `bin/upcheck` binary in $HOME/.local/bin/, put the
 If you don't want to use the provided binary, you can compile it following the next commands:
 ```
 # pacman -S rust
-$ git clone https://gitlab.com/edu4rdshl/upcheck.git
+$ git clone https://github.com/edu4rdshl/upcheck.git
 $ cd upcheck
 $ cargo build --release
 $ cp target/release/upcheck $HOME/.local/bin/
